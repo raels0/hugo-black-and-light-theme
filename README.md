@@ -2,6 +2,9 @@
 
 A High contrast, text oriented, performant and Javascript-free theme for Hugo.
 
+## Fork Changes
+Changed to use sass plus some customisations for intended blog.
+
 ## Features
 * Loads in a single request (with web-fonts disabled).
 * 100 / 100 on Google Page Speed test (100 / 100 on mobile with web-fonts disabled).

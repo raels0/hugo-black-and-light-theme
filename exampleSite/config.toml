@@ -1,24 +1,37 @@
 baseurl = "https://www.example.com/"
-title = "Black & Light"
-author = "David Hamp-Gonsalves"
+title = "Example"
+author = "Temporarily Anonymous"
 canonifyurls = true
 languagecode = "en"
 theme = "black-and-light"
+disableKinds = ["taxonomy", "taxonomyTerm"]
 
 pygmentsstyle       = "bw"
 pygmentscodefences  = true
 
 [params]
-  sitename = "Black & Light"
+  sitename = "Example"
+  subtitle = "Subtitle for site"
   disableWebFonts = false
 
+  google_fonts = [
+    ["Open Sans", "400"],
+    ["Source Sans Pro", "300, 300i, 400, 400i, 700, 700i"],
+    ["Fira Code", "300, 400, 500, 600, 700"],
+    ["Montserrat", "300"],
+  ]
+
+  heading_font = "Fira Code"
+  body_font    = "Source Sans Pro"
+  mono_font    = "Fira Code"
+  sans_font    = "Open Sans"
+  title_font   = "Montserrat"
+
 [[menu.main]]
-    name = "About"
-    url  = "https://github.com/davidhampgonsalves/hugo-black-and-light-theme"
+    name = "Generic Maxims"
+    url  = "/maxims"
 [[menu.main]]
-    name = "Projects"
-    url  = "https://github.com/davidhampgonsalves/hugo-black-and-light-theme"
-[[menu.main]]
-    name = "Resume"
-    url  = "https://github.com/davidhampgonsalves/hugo-black-and-light-theme"
+    name = "Posts"
+    url  = "/"
+    weight = -1
 

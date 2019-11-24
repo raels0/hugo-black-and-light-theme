@@ -9,10 +9,6 @@
     <meta name="referrer" content="no-referrer">
     {{ if .Site.Params.description }}<meta name="description" content="{{ .Site.Params.description }}">{{ end }}
 
-    {{ if not .Site.Params.disableWebFonts }}
-      <link href='https://fonts.googleapis.com/css?family=Open+Sans:400|Old+Standard+TT:400' rel='stylesheet' type='text/css'>
-    {{ end }}
-
     <link rel="icon" type="image/png" href="/favicon_16x16.png" sizes="16x16">
     <link rel="icon" type="image/png" href="/favicon_32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="/favicon_128x128.png" sizes="128x128">
@@ -27,7 +23,10 @@
     </title>
     <link rel="canonical" href="{{ .Permalink }}">
 
-    {{ partial "styles.html" . }}
+    {{ partial "google-fonts" . }}
+
+    {{ $style := resources.Get "main.scss" | resources.ExecuteAsTemplate "style.main.scss" . | toCSS | resources.Minify }}
+    <link rel="stylesheet" href="{{ $style.Permalink }}">
 
     {{ with .OutputFormats.Get "RSS" }}
         {{ printf "<atom:link href=%q rel=\"self\" type=%q />" .Permalink .MediaType | safeHTML }}
@@ -37,8 +36,9 @@
   <body>
     <section id=nav>
       <h1><a href="/">{{ .Site.Params.sitename }}</a></h1>
+      <h4>{{ .Site.Params.subtitle }}</h4>
       <ul>
-        {{ range .Site.Menus.main }}
+        {{ range .Site.Menus.main.ByWeight }}
           <li><a href="{{ .URL }}">{{ .Name }}</a></li>
         {{ end }}
       </ul>
