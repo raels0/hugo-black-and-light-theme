@@ -103,6 +103,7 @@ em,q,em,dfn {
 
 .heading,.serif,h1,h2,h3 {
     font-family: $font-heading;
+    font-weight: 500;
 }
 
 strong {
@@ -174,7 +175,7 @@ h1,h2 {
 #sub-header, time {
     color:#403c3b;
     font-size:13px;
-    font-family: $font-sans;
+    font-family: $font-mono;
 }
 
 #sub-header {
@@ -190,7 +191,7 @@ h1,h2 {
 }
 
 #nav h4 {
-    font-family: "Fira Code";
+    font-family: $font-sans;
     font-weight: 300;
 }
 
@@ -243,18 +244,19 @@ ul li:before {
 }
 
 #content h2 {
-    font-size: 1.6rem;
+    font-size: 1.7rem;
 }
 
 #content h3 {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     border-bottom: 1px solid #000;
 }
 
 #content h4,
 #content h5,
 #content h6 {
-    font-family: $font-mono;
+    font-family: $font-heading;
+    font-weight: 400;
 }
 
 #content h4 {
