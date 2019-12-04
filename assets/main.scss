@@ -268,7 +268,7 @@ ul li:before {
 #content h3 {
     font-size: 1.3rem;
     font-weight: 300;
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid #ddd;
 }
 
 #content h4 {
@@ -282,6 +282,8 @@ ul li:before {
 }
 
 #content p {
+    color: #202124;
+    line-height: 1.45;
     margin-bottom: 1rem;
 }
 
