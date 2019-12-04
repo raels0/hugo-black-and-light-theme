@@ -2,6 +2,7 @@ $font-heading: {{ $.Site.Params.heading_font | default "'Old Standard TT', serif
 $font-body: {{ $.Site.Params.body_font | default "'Open Sans', 'Myriad Pro', sans-serif" }};
 $font-mono: {{ $.Site.Params.mono_font | default "Consolas, 'Liberation Mono', Menlo, Courier, monospace" }};
 $font-sans: {{ $.Site.Params.sans_font | default "'Open Sans', sans-serif" }};
+$font-seruf: {{ $.Site.Params.serif_font | default "Georgia, serif" }};
 $font-title: {{ $.Site.Params.title_font | default "Montserrat, 'Open Sans', sans-serif" }};
 
 * {
@@ -224,6 +225,7 @@ ul li:before {
     text-align:left;
     width:100%;
     font-size: 1.125rem;
+    word-spacing: 0.05em;
     padding:60px 0 80px;
 }
 
@@ -247,25 +249,35 @@ ul li:before {
     font-size: 1.7rem;
 }
 
-#content h3 {
-    font-size: 1.6rem;
-    border-bottom: 1px solid #000;
+
+#content h3,
+#content h4,
+#content h5,
+#content h6 {
+    font-family: $font-mono;
 }
 
 #content h4,
 #content h5,
 #content h6 {
-    font-family: $font-heading;
+    line-height: 1.2;
     font-weight: 400;
+    color: #1c1c1c;
+}
+
+#content h3 {
+    font-size: 1.3rem;
+    font-weight: 300;
+    border-bottom: 1px solid #000;
 }
 
 #content h4 {
-    font-size: 1.35rem;
+    font-size: 1.2rem;
     margin-top: 1.2rem;
 }
 
 #content h5 {
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin-top: 0.25rem;
 }
 
